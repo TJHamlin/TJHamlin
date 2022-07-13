@@ -1,1 +1,12 @@
-You will need to run "stanmod_form" first as this creates "mod.stan" which is a stan file containing the required HMM structure. Following this, run "stanmod_run" to run the HMM through Stan. If you wish to change the priors this will need to be done in "stanmod_form", while changing initial values, parameter settings or data included needs to be done in "stanmod_run".
+"stanmod_form.R"  - R file that creates a .stan file ("mod.stan") which contains the HMM structure required by stan.
+                  - Run this first.
+                  - If you wish to change the priors used in the model do so here.
+
+"stanmod_run.R"   - R file that takes the HMM structure ("mod.stan") and implements it into Stan.
+                  - Run this second.
+                  - If you wish to change the initial values, model settings (i.e. number of states), or data inclusion do so here.
+
+"#id#iters.rds"   - An example model output run previously.
+                  - The number of iterations and individuals considered are featured in the title.
+                  - Can be drawn into R using readRDS() and then treated like a normal stan output.
+
